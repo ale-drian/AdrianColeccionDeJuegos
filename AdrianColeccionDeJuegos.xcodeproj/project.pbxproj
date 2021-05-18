@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683B8DC926525A9800CA123F /* JuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B8DC826525A9800CA123F /* JuegosViewController.swift */; };
 		684C4A4426524D8400090A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C4A4326524D8400090A7E /* AppDelegate.swift */; };
 		684C4A4626524D8400090A7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C4A4526524D8400090A7E /* SceneDelegate.swift */; };
 		684C4A4826524D8400090A7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C4A4726524D8400090A7E /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		683B8DC826525A9800CA123F /* JuegosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegosViewController.swift; sourceTree = "<group>"; };
 		684C4A4026524D8400090A7E /* AdrianColeccionDeJuegos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdrianColeccionDeJuegos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684C4A4326524D8400090A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		684C4A4526524D8400090A7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				684C4A5126524D8500090A7E /* LaunchScreen.storyboard */,
 				684C4A5426524D8500090A7E /* Info.plist */,
 				684C4A4C26524D8400090A7E /* AdrianColeccionDeJuegos.xcdatamodeld */,
+				683B8DC826525A9800CA123F /* JuegosViewController.swift */,
 			);
 			path = AdrianColeccionDeJuegos;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683B8DC926525A9800CA123F /* JuegosViewController.swift in Sources */,
 				684C4A4E26524D8400090A7E /* AdrianColeccionDeJuegos.xcdatamodeld in Sources */,
 				684C4A4826524D8400090A7E /* ViewController.swift in Sources */,
 				684C4A4426524D8400090A7E /* AppDelegate.swift in Sources */,
