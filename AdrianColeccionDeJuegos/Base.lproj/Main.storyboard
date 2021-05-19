@@ -33,7 +33,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jQ6-Ug-g8R">
                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="iRj-ld-5c3" kind="show" id="Gux-8c-vxd"/>
+                                <segue destination="iRj-ld-5c3" kind="show" identifier="juegoSegue" id="Gux-8c-vxd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -79,12 +79,28 @@
                                     <action selector="agregarTapped:" destination="iRj-ld-5c3" eventType="touchUpInside" id="3Bq-fy-PwX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em0-2y-SlZ">
+                                <rect key="frame" x="157" y="395" width="100" height="36"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3YI-Qg-UbE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Eliminar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="iRj-ld-5c3" eventType="touchUpInside" id="jmO-dw-tIB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="acS-Tk-Lu2" firstAttribute="top" secondItem="jJb-YF-0E1" secondAttribute="top" constant="32" id="AUb-5r-t5H"/>
+                            <constraint firstItem="em0-2y-SlZ" firstAttribute="top" secondItem="syu-eu-p9c" secondAttribute="bottom" constant="15" id="BcQ-hl-lzi"/>
                             <constraint firstItem="acS-Tk-Lu2" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="M6V-0w-4m4"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="top" secondItem="acS-Tk-Lu2" secondAttribute="bottom" constant="20" id="WIG-Gf-WJQ"/>
+                            <constraint firstItem="em0-2y-SlZ" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="XlL-C5-grk"/>
                             <constraint firstItem="syu-eu-p9c" firstAttribute="top" secondItem="Ip3-ex-dzH" secondAttribute="bottom" constant="20" id="Ygw-1Y-pa4"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="leading" secondItem="acS-Tk-Lu2" secondAttribute="leading" id="hj0-l4-tFB"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="width" secondItem="acS-Tk-Lu2" secondAttribute="width" id="kIx-Y2-0i8"/>
@@ -111,6 +127,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="acS-Tk-Lu2" id="CKc-Nt-ZEd"/>
+                        <outlet property="agregarActualizarBoton" destination="syu-eu-p9c" id="Ncv-eP-FSY"/>
+                        <outlet property="eliminarBoton" destination="em0-2y-SlZ" id="wLO-nR-j0z"/>
                         <outlet property="tituloTextField" destination="Ip3-ex-dzH" id="i7K-4N-EMQ"/>
                     </connections>
                 </viewController>
