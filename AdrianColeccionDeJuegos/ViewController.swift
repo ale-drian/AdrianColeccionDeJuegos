@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.isEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,5 +48,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! JuegosViewController
         siguienteVC.juego = sender as? Juego
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if 	editingStyle == .delete {
+            //Eliminar de core Data
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let juego = juegos[indexPath.row]
+            context.delete(juego)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            //Eliminar del array
+            juegos.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        //mover del array
+        let juegoMovido = juegos[fromIndexPath.row]
+        juegos.remove(at: fromIndexPath.row)
+        juegos.insert(juegoMovido, at: to.row)
     }
 }
