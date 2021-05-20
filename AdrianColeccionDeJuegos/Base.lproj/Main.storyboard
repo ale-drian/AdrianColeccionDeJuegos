@@ -66,7 +66,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syu-eu-p9c">
-                                <rect key="frame" x="157" y="344" width="100" height="36"/>
+                                <rect key="frame" x="157" y="528" width="100" height="36"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="nEf-ge-hoo"/>
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em0-2y-SlZ">
-                                <rect key="frame" x="157" y="395" width="100" height="36"/>
+                                <rect key="frame" x="157" y="579" width="100" height="36"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3YI-Qg-UbE"/>
@@ -93,15 +93,59 @@
                                     <action selector="eliminarTapped:" destination="iRj-ld-5c3" eventType="touchUpInside" id="jmO-dw-tIB"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8s-3n-AqV">
+                                <rect key="frame" x="67" y="344" width="280" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-3t-lDU">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="6Bx-9K-8zc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="iRj-ld-5c3" id="SVT-id-yvr"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXq-zD-Rnf">
+                                        <rect key="frame" x="250" y="0.0" width="30" height="34"/>
+                                        <color key="backgroundColor" red="0.57106598980000001" green="0.1868181246" blue="0.14933958829999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="seleccionaCategoria:" destination="iRj-ld-5c3" eventType="touchUpInside" id="cdM-o4-Tg3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="1yq-27-jBQ"/>
+                                </constraints>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-Sp-2hS">
+                                <rect key="frame" x="67" y="378" width="256" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="66x-DR-GPd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="iRj-ld-5c3" id="gpj-pq-e81"/>
+                                    <outlet property="delegate" destination="iRj-ld-5c3" id="ji0-DQ-xrv"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="d8s-3n-AqV" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="6Vz-kX-91T"/>
+                            <constraint firstItem="syu-eu-p9c" firstAttribute="top" secondItem="Yrf-Sp-2hS" secondAttribute="bottom" constant="30" id="94O-9V-8G3"/>
                             <constraint firstItem="acS-Tk-Lu2" firstAttribute="top" secondItem="jJb-YF-0E1" secondAttribute="top" constant="32" id="AUb-5r-t5H"/>
                             <constraint firstItem="em0-2y-SlZ" firstAttribute="top" secondItem="syu-eu-p9c" secondAttribute="bottom" constant="15" id="BcQ-hl-lzi"/>
+                            <constraint firstItem="jJb-YF-0E1" firstAttribute="trailing" secondItem="Yrf-Sp-2hS" secondAttribute="trailing" constant="91" id="FJ5-zE-B6O"/>
+                            <constraint firstItem="Yrf-Sp-2hS" firstAttribute="top" secondItem="d8s-3n-AqV" secondAttribute="bottom" id="I8J-b6-DLk"/>
                             <constraint firstItem="acS-Tk-Lu2" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="M6V-0w-4m4"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="top" secondItem="acS-Tk-Lu2" secondAttribute="bottom" constant="20" id="WIG-Gf-WJQ"/>
+                            <constraint firstItem="Yrf-Sp-2hS" firstAttribute="leading" secondItem="d8s-3n-AqV" secondAttribute="leading" id="Wj6-kQ-vnz"/>
                             <constraint firstItem="em0-2y-SlZ" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="XlL-C5-grk"/>
-                            <constraint firstItem="syu-eu-p9c" firstAttribute="top" secondItem="Ip3-ex-dzH" secondAttribute="bottom" constant="20" id="Ygw-1Y-pa4"/>
+                            <constraint firstItem="d8s-3n-AqV" firstAttribute="top" secondItem="Ip3-ex-dzH" secondAttribute="bottom" constant="20" id="ZTy-M1-0zA"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="leading" secondItem="acS-Tk-Lu2" secondAttribute="leading" id="hj0-l4-tFB"/>
                             <constraint firstItem="Ip3-ex-dzH" firstAttribute="width" secondItem="acS-Tk-Lu2" secondAttribute="width" id="kIx-Y2-0i8"/>
                             <constraint firstItem="syu-eu-p9c" firstAttribute="centerX" secondItem="fwc-Pw-PVk" secondAttribute="centerX" id="rac-a9-sZK"/>
@@ -129,6 +173,8 @@
                         <outlet property="JuegoImageView" destination="acS-Tk-Lu2" id="CKc-Nt-ZEd"/>
                         <outlet property="agregarActualizarBoton" destination="syu-eu-p9c" id="Ncv-eP-FSY"/>
                         <outlet property="eliminarBoton" destination="em0-2y-SlZ" id="wLO-nR-j0z"/>
+                        <outlet property="listCategorias" destination="Yrf-Sp-2hS" id="lI5-Ae-5nx"/>
+                        <outlet property="pickerCategoria" destination="5qy-3t-lDU" id="f20-VJ-Tad"/>
                         <outlet property="tituloTextField" destination="Ip3-ex-dzH" id="i7K-4N-EMQ"/>
                     </connections>
                 </viewController>
@@ -155,4 +201,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowtriangle.down.fill" catalog="system" width="64" height="62"/>
+    </resources>
 </document>

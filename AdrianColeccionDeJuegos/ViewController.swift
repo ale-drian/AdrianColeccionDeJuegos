@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.isEditing = true
+        //tableView.isEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let juego = juegos[indexPath.row]
-        cell.textLabel?.text = juego.titulo
+        cell.textLabel?.text = juego.titulo! + " C: " + juego.categoria!
         cell.imageView?.image = UIImage(data: (juego.imagen!))
         return cell
     }
